@@ -1,17 +1,42 @@
-application: your-app-id
+application: poised-shuttle-119914
 version: 1
-runtime: python27
+runtime: php55
 api_version: 1
 threadsafe: yes
 
 handlers:
-- url: /favicon\.ico
-  static_files: favicon.ico
-  upload: favicon\.ico
+- url: /
+  script: admin.php
 
-- url: .*
-  script: main.app
+- url: /checklogin.php
+  script: checklogin.php
 
-libraries:
-- name: webapp2
-  version: "2.5.2"
+- url: /admin.php
+  script: admin.php
+
+- url: /adminhistory.php
+  script: adminhistory.php
+
+- url: /adminhistory2.php
+  script: adminhistory2.php
+
+
+- url: /logout.php
+  script: /logout.php
+
+- url: /guideline.php
+  script: /guideline.php
+
+- url: /js
+  static_dir: js
+
+- url: /bootstrap
+  static_dir: bootstrap
+
+- url: /index.php
+  script: index.php
+
+- url: /lib
+  static_dir: lib
+
+
